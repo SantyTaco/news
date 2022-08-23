@@ -1,15 +1,15 @@
-class Articles {
+class News {
     constructor(
-        totalArticles,
+        maxNewsNumber,
         wordFrequency,
         articles,
         searchIn,
     ) {
-        this.totalArticles = totalArticles;
+        this.maxNewsNumber = maxNewsNumber;
         this.wordFrequency = wordFrequency;
         this.articles = articles;
         this.searchIn = searchIn;
     }
 }
 
-module.exports = Articles;
+module.exports = News;

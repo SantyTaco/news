@@ -1,8 +1,8 @@
 const express = require('express');
-const {getNewsByKeyWord } = require('../controllers/newsController');
+const {NewsController } = require('../controllers/newsController');
 
 const router = express.Router();
-
-router.get('/articles/search', getNewsByKeyWord);
+const newsController = new NewsController()
+router.get('/articles/search', newsController.getNewsByKeyWord);
 
 module.exports = router;
