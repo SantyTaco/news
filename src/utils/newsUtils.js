@@ -1,9 +1,9 @@
 const News = require('../models/news');
-const New = require('../models/new')
+const Article = require('../models/article')
 
 function formatGNewsData(gNewsArticles, max, searchIn) {
     const articleList = gNewsArticles?.map((article) => {
-        return new New(
+        return new Article(
             article.title,
             article.description,
             article.content,

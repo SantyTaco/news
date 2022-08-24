@@ -1,7 +1,7 @@
 const axios = require('axios');
 const MockAdapter = require("axios-mock-adapter");
 const  {generateNews, gNewsData}  = require('../../tests/utils/generate');
-const Gnews = require('./gnews_data_source');
+const getGNewsByKeyWord = require('./gNewsDataSource');
 
 describe("Get GNews", () => {
     let mock;
@@ -17,12 +17,11 @@ describe("Get GNews", () => {
 
     describe("when API call is successful", () => {
       it("should return news list", async () => {
-        const gNewsDataSource = new Gnews();
         const gNews = gNewsData;
         const news = generateNews();
         mock.onGet(`${GNEWS_URL}/search`).reply(200, gNews);
 
-        const result = await gNewsDataSource.getGNewsByKeyWord('test', '3','title');
+        const result = await getGNewsByKeyWord('test', '3','title');
 
         expect(mock.history.get[0].url).toEqual(`${GNEWS_URL}/search`);
         expect(result).toEqual(news);
