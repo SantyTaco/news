@@ -2,6 +2,8 @@ const express = require('express');
 const http = require('http');
 const morgan = require('morgan')
 const routes = require ('./routers/news');
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require('./swagger.json');
 
 const app = express();
 
@@ -23,11 +25,11 @@ app.use((req, res, next) => {
 app.use('/', routes);
 
 /**Swagger */
-/*app.use(
+app.use(
   "/docs",
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocument)
-);*/
+);
 
 /** Error handling */
 app.use((req, res, next) => {
