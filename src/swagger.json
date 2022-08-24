@@ -89,7 +89,7 @@
     "securitySchemes": {}
   },
   "info": {
-    "title": "topl_back_end_exercise",
+    "title": "News API",
     "version": "1.0.0",
     "license": {
       "name": "ISC"
