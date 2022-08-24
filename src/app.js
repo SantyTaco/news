@@ -41,5 +41,5 @@ app.use((req, res, next) => {
 
 /** Server */
 const httpServer = http.createServer(app);
-const PORT = process.env.PORT ?? 6070;
+const PORT = process.env.PORT || 6070;
 httpServer.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
